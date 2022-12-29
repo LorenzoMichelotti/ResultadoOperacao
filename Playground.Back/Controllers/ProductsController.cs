@@ -21,6 +21,7 @@ namespace Playground.Back.Controllers
 
             return result;
         }
+
         public class ProductFilter
         {
             public List<int> Ids { get; set; }
