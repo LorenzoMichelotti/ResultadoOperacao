@@ -27,7 +27,7 @@ namespace Havan.Ecommerce.Padronizacao.Back.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers(); 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Havan.Ecommerce.Padronizacao.Back.Api", Version = "v1" });
