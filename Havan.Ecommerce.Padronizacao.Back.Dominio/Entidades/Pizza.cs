@@ -16,4 +16,19 @@
             Descricao = descricao;
         }
     }
+
+    public class PizzaPost
+    {
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+
+        public string Descrição()
+            => $"{Nome}, {Descricao}";
+
+        public PizzaPost(string nome, string descricao)
+        {
+            Nome = nome;
+            Descricao = descricao;
+        }
+    }
 }

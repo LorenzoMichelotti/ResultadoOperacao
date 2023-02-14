@@ -14,7 +14,7 @@ namespace Havan.Ecommerce.Padronizacao.Back.Aplicacao
             new(3, "Pizza Portuguesa", "Presunto, Queijo, Ovo  Cozido e Molho de tomate")
         };
 
-        public IResultadoOperacao BuscarPizzas(FiltroDeBuscaPizzasModelo filtro)
+        public IResultadoOperacao Filtrar(FiltroDeBuscaPizzasModelo filtro)
         {
             ResultadoOperacao<List<Pizza>> resultado = new();
             try
@@ -24,14 +24,41 @@ namespace Havan.Ecommerce.Padronizacao.Back.Aplicacao
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return resultado.AdicionarErro("Erro ao realizar a busca.");
+                return resultado.AdicionarErro(new("E1004", MensagensDeErroRecurso.E1004_ErroNaBusca));
             }
         }
         
-        public IResultadoOperacao ObterPizza()
+        public IResultadoOperacao Obter()
             => new ResultadoOperacao<Pizza>(pizzas[aleatorio.Next(pizzas.Count)]);
 
-        public static IResultadoOperacao ObterPizzaErrada()
-            => new ResultadoOperacao("Desculpe, no momento não conseguimos fazer sua pizza.");
+        public IResultadoOperacao ObterPorId(int id)
+        {
+            ResultadoOperacao<Pizza> resultado = new();
+            Pizza pizza = pizzas.Find(p => p.Id == id);
+            if (pizza == null) return resultado.AdicionarErro(
+                new ("E1000",
+                MensagensDeErroRecurso.E1000_NenhumaPizzaComIdentificador, "id"),
+                System.Net.HttpStatusCode.NotFound);
+            return resultado.AdicionarRetorno(pizza);
+        }
+
+        public static IResultadoOperacao ObterComErro()
+            => new ResultadoOperacao(new("E1001", MensagensDeErroRecurso.E1001_ErroNoServidor), System.Net.HttpStatusCode.InternalServerError);
+
+        public static IResultadoOperacao ObterComVariosErros()
+        {
+            ResultadoOperacao resultado = new ResultadoOperacao();
+            resultado.AdicionarErro(new("E1002", MensagensDeErroRecurso.E1002_PizzaQueimou), System.Net.HttpStatusCode.NotAcceptable);
+            resultado.AdicionarErro(new("E1003", MensagensDeErroRecurso.E1003_PizzaDesapareceu), System.Net.HttpStatusCode.Gone);
+            return resultado;
+        }
+
+        public IResultadoOperacao AdicionarSabor(PizzaPost pizza)
+        {
+            ResultadoOperacao<Pizza> resultado = new();
+            Pizza novoSabor = new Pizza(pizzas.Count, pizza.Nome, pizza.Descricao);
+            pizzas.Add(novoSabor);
+            return resultado.AdicionarRetorno(novoSabor, System.Net.HttpStatusCode.Created);
+        }
     }
 }

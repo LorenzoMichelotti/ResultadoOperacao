@@ -18,24 +18,44 @@ namespace Havan.Ecommerce.Padronizacao.Back.Api.Controllers
 
         /// <summary>
         /// Busca pizzas por uma lista de ids.
-        /// GET: api/<PizzasController>
         /// </summary>
-        /// <returns></returns>
-        [HttpGet("BuscarPizzas")]
+        [HttpGet("Filtrar")]
         public IActionResult Get([FromQuery] FiltroDeBuscaPizzasModelo filtro)
-            => Response(_pizzaAplicacao.BuscarPizzas(filtro));
+            => Response(_pizzaAplicacao.Filtrar(filtro));
         
         /// <summary>
         /// Busca um sabor de pizza aleatorio.
-        /// GET: api/<PizzasController>
         /// </summary>
-        /// <returns></returns>
-        [HttpGet("ObterPizza")]
-        public IActionResult Get()
-            => Response(_pizzaAplicacao.ObterPizza());
+        [HttpGet("ObterAleatoria")]
+        public IActionResult ObterPizza()
+            => Response(_pizzaAplicacao.Obter());
 
-        [HttpGet("ObterPizzaErrada")]
+        /// <summary>
+        /// Busca uma pizza por ID
+        /// </summary>
+        [HttpGet("ObterPorId")]
+        public IActionResult ObterPizzaPorId(int id)
+            => Response(_pizzaAplicacao.ObterPorId(id));
+
+        /// <summary>
+        /// Retorna um erro de servidor
+        /// </summary>
+        [HttpGet("ObterComErro")]
         public IActionResult ObterPizzaErrada()
-            => Response(PizzaAplicacao.ObterPizzaErrada());
+            => Response(PizzaAplicacao.ObterComErro());
+
+        /// <summary>
+        /// Retorna um erro de servidor
+        /// </summary>
+        [HttpGet("ObterComVariosErros")]
+        public IActionResult ObterPizzaComVariosErros()
+            => Response(PizzaAplicacao.ObterComVariosErros());
+
+        /// <summary>
+        /// Busca um sabor de pizza aleatorio.
+        /// </summary>
+        [HttpPost("Adicionar")]
+        public IActionResult AdicionarSabor(PizzaPost pizza)
+            => Response(_pizzaAplicacao.AdicionarSabor(pizza));
     }
 }
