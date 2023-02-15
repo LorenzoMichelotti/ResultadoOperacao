@@ -13,17 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Testes", "5 - Testes", "{9B7D56BE-2198-4E5D-8047-2FB705DD967B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Havan.Ecommerce.Padronizacao.Back.Aplicacao", "Havan.Ecommerce.Padronizacao.Back.Aplicacao\Havan.Ecommerce.Padronizacao.Back.Aplicacao.csproj", "{443B5DF9-760A-488F-A1C2-463B02A92225}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacao", "Aplicacao\Aplicacao.csproj", "{443B5DF9-760A-488F-A1C2-463B02A92225}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Havan.Ecommerce.Padronizacao.Back.Dominio", "Havan.Ecommerce.Padronizacao.Back.Dominio\Havan.Ecommerce.Padronizacao.Back.Dominio.csproj", "{62BA8A17-B9C6-4DF8-8250-1976BC90E7AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{62BA8A17-B9C6-4DF8-8250-1976BC90E7AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Havan.Ecommerce.Padronizacao.Back.Infra", "Havan.Ecommerce.Padronizacao.Back.Infra\Havan.Ecommerce.Padronizacao.Back.Infra.csproj", "{BB3A0542-DD50-407A-8068-ABAE9FC08EB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{BB3A0542-DD50-407A-8068-ABAE9FC08EB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Havan.Ecommerce.Padronizacao.Back.Testes", "Havan.Ecommerce.Padronizacao.Back.Testes\Havan.Ecommerce.Padronizacao.Back.Testes.csproj", "{109FEF7A-CB99-40F0-BC77-15480347139A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testes", "Testes\Testes.csproj", "{109FEF7A-CB99-40F0-BC77-15480347139A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Havan.Ecommerce.Padronizacao.Back.Api", "Havan.Ecommerce.Padronizacao.Back.Api\Havan.Ecommerce.Padronizacao.Back.Api.csproj", "{47BE4F24-8E47-4404-8801-12FEAF47B176}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{47BE4F24-8E47-4404-8801-12FEAF47B176}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Havan.Ecommerce.Padronizacao.Back.Console", "Havan.Ecommerce.Padronizacao.Back.Console\Havan.Ecommerce.Padronizacao.Back.Console.csproj", "{897023D7-48C1-417C-9C2B-B78665233E6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{897023D7-48C1-417C-9C2B-B78665233E6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

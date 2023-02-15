@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Havan.Ecommerce.Padronizacao.Back.Aplicacao\Havan.Ecommerce.Padronizacao.Back.Aplicacao.csproj" />
-    <ProjectReference Include="..\Havan.Ecommerce.Padronizacao.Back.Dominio\Havan.Ecommerce.Padronizacao.Back.Dominio.csproj" />
+    <ProjectReference Include="..\Aplicacao\Aplicacao.csproj" />
+    <ProjectReference Include="..\Dominio\Dominio.csproj" />
   </ItemGroup>
 
   <ItemGroup>
